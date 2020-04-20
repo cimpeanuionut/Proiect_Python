@@ -6,7 +6,7 @@ class FileUtils:
     def __init__(self):
         pass
 
-    ## Functia va scrie datele intr-un fisier txt
+    # Functia va scrie datele intr-un fisier txt
     def writeToTxt(self, article_items):
         header = Constants.file_header
         open(Constants.file_name, 'w').close()

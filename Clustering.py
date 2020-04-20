@@ -6,6 +6,7 @@ class Clustering:
     def __init__(self):
         pass
 
+    # Functia va aplica algoritmul de Agglomerative Clustering
     def acluster(self, row_names, col_names, data):
         numpy_data = np.array(data)
         clustered = cluster.AgglomerativeClustering(compute_full_tree=True, n_clusters=2, linkage='complete')
@@ -15,6 +16,7 @@ class Clustering:
         clusters = [{'id': next(it), 'left': x[0], 'right': x[1]} for x in model.children_]
         self.print_cluster(clusters, clusters[-1]['id'], numpy_data.shape[0], labels=row_names)
 
+    # Functia va afisa la consola datele in urma clusterizari
     def print_cluster(self, clusters, current_id, initial_value, labels=None, n=0):
         for i in range(n):
             print(' ', end='')
